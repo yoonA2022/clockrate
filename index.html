@@ -8,26 +8,45 @@
         body {
             font-family: Arial, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            transition: background-color 0.5s, color 0.5s;
         }
         #clock {
             font-size: 48px;
             font-weight: bold;
+            margin-bottom: 20px;
+            animation: pulse 1s infinite alternate;
         }
         #modeSwitch {
-            position: fixed;
-            top: 10px;
-            right: 10px;
             cursor: pointer;
+            padding: 10px 20px;
+            border: 2px solid currentColor;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.05);
+            }
         }
     </style>
 </head>
 <body>
     <div id="clock"></div>
-    <div id="modeSwitch">切换模式</div>
+    <button id="modeSwitch">切换深色模式</button>
     <script>
         function updateClock() {
             const now = new Date();
@@ -45,15 +64,6 @@
 
         setInterval(updateClock, 1000);
         updateClock();
-
-        const style = document.createElement('style');
-        style.textContent = `
-            .dark-mode {
-                background-color: #333;
-                color: #fff;
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
