@@ -1,4 +1,4 @@
-# always
+# clockrate
 一个用html编写的简单的时钟样式<br>A simple clock style written in html
 
 [![HTML](https://img.shields.io/badge/HTML-5-orange?style=flat-square&logo=html5)](https://auzgo.com/)
@@ -13,3 +13,7 @@
  ```
  https://always-two.vercel.app
  ```
+ # 贡献者
+<a href="https://github.com/yoonA2022/always/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=yoonA2022/always" />
+</a>
