@@ -46,6 +46,8 @@
 </head>
 <body>
     <div id="clock"></div>
+    <div id="date"></div>
+    <div id="quote"></div>
     <button id="modeSwitch">切换深色模式</button>
     <script>
         function updateClock() {
@@ -56,6 +58,29 @@
             document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
         }
 
+        function updateDate() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = (now.getMonth() + 1).toString().padStart(2, '0');
+            const day = now.getDate().toString().padStart(2, '0');
+            document.getElementById('date').textContent = `${year}年${month}月${day}日`;
+        }
+
+        function updateQuote() {
+            const quotes = [
+                "成功的秘诀在于始终坚持自己的信念。",
+                "只有不断地追求进步，才能不断地超越自己。",
+                "没有哪个人的天赋是完美的，只有不断努力才能让自己更接近完美。",
+                "成功的关键在于不断地学习和实践。",
+                "只有不断地挑战自己，才能不断地成长。",
+                "成功的路上充满了坎坷和挫折，但只要坚持不懈，就一定能够到达终点。",
+                "只有不断地创新和改进，才能不断地提高自己的竞争力。",
+                "成功的秘诀在于不断地尝试和探索，不断地突破自己的极限。"
+            ];
+            const quote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('quote').textContent = `每日一言：${quote}`;
+        }
+
         function toggleMode() {
             document.body.classList.toggle('dark-mode');
         }
@@ -64,6 +89,11 @@
 
         setInterval(updateClock, 1000);
         updateClock();
+
+        setInterval(updateDate, 1000);
+        updateDate();
+
+        updateQuote();
     </script>
 </body>
 </html>
