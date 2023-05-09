@@ -14,8 +14,7 @@
  https://always-two.vercel.app
  ```
 ## 更新
-v1.1
-随机一言
+v1.1<br>随机一言
 
  # 贡献者
 <a href="https://github.com/yoonA2022/always/graphs/contributors">
